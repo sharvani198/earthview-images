@@ -28,8 +28,8 @@ def create_img(imgNum, count):
     #get a suitable name for image
     geocode = responseJson.get("geocode", imgNum)
     country = geocode.get("country", imgNum)
-    locality = geocode.get("locality", "")
-    area = geocode.get("administrative_area_level_1", "")
+    locality = geocode.get("locality", imgNum)
+    area = geocode.get("administrative_area_level_1", imgNum)
     fileName = country + "-" + locality + "-" + area
     fileName = fileName.encode("utf-8")
     fileName = fileName.replace(" ", "-")
